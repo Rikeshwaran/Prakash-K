@@ -445,7 +445,7 @@ body {
 
 .hero-actions {
     /* display: flex; */
-    gap: 20px;
+    padding: 5px;
 }
 
 .btn-primary, .btn-secondary {
