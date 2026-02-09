@@ -444,7 +444,7 @@ body {
 }
 
 .hero-actions {
-    display: flex;
+    /* display: flex; */
     gap: 20px;
 }
 
