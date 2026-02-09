@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Prakash K - UI/UX Designer</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .thank-you-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .thank-you-card {
+            background: white;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .checkmark {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #3a3a8c, #5a5ab8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            animation: scaleIn 0.5s ease-out 0.3s both;
+        }
+        
+        .checkmark i {
+            font-size: 50px;
+            color: white;
+            animation: checkmark 0.5s ease-out 0.8s both;
+        }
+        
+        .thank-you-title {
+            font-family: 'Raleway', sans-serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #2d2d5a;
+            margin-bottom: 20px;
+        }
+        
+        .thank-you-message {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn-home {
+            padding: 15px 35px;
+            background: linear-gradient(to right, #3a3a8c, #5a5ab8);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(58, 58, 140, 0.3);
+        }
+        
+        .btn-home:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(58, 58, 140, 0.4);
+        }
+        
+        .btn-portfolio {
+            padding: 15px 35px;
+            background: transparent;
+            color: #3a3a8c;
+            border: 2px solid #3a3a8c;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .btn-portfolio:hover {
+            background-color: rgba(58, 58, 140, 0.05);
+            transform: translateY(-3px);
+        }
+        
+        .countdown {
+            margin-top: 30px;
+            font-size: 16px;
+            color: #777;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes checkmark {
+            0% {
+                transform: scale(0) rotate(-45deg);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2) rotate(-45deg);
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .thank-you-card {
+                padding: 40px 20px;
+            }
+            
+            .thank-you-title {
+                font-size: 32px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-home, .btn-portfolio {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thank-you-container">
+        <div class="thank-you-card">
+            <div class="checkmark">
+                <i class="fas fa-check"></i>
+            </div>
+            
+            <h1 class="thank-you-title">Thank You!</h1>
+            
+            <p class="thank-you-message">
+                Your message has been successfully sent. I appreciate you reaching out to me and will get back to you as soon as possible. 
+                Typically, I respond within 24-48 hours.
+            </p>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn-home">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <a href="index.html#projects" class="btn-portfolio">
+                    <i class="fas fa-briefcase"></i> View My Portfolio
+                </a>
+            </div>
+            
+            <div class="countdown">
+                Redirecting to home page in <span id="countdown">10</span> seconds...
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let countdown = 10;
+        const countdownElement = document.getElementById('countdown');
+        
+        const timer = setInterval(function() {
+            countdown--;
+            countdownElement.textContent = countdown;
+            
+            if (countdown <= 0) {
+                clearInterval(timer);
+                window.location.href = 'index.html';
+            }
+        }, 1000);
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>
