@@ -447,7 +447,9 @@ body {
     /* display: flex; */
     gap: 20px;
 }
-
+.hero-actions a {
+    margin: 5px;
+}
 
 .btn-primary, .btn-secondary {
     padding: 15px 35px;
